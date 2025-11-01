@@ -1,41 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+  <meta charset="utf-8">
   <title>Contador de Clicks</title>
+  
+  <style>
+    body {
+      /* Asegúrate de que esta ruta de imagen sea correcta */
+      background: url("./Images/1.png") no-repeat center center fixed;
+      background-size: cover;
+      color: #000080; /* Color de texto principal */
+    }
+
+    @keyframes blink-animation {
+      50% { opacity: 0; }
+    }
+
+    .blink-me {
+      animation: blink-animation 1s steps(2, start) infinite;
+    }
+
+    /* Fondo beige para las tablas */
+    table {
+      background-color: #fffbe6;
+    }
+    
+    /* Estilos para el botón para que parezca más "clásico" */
+    button {
+        font-family: "Comic Sans MS", "Courier New", Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        color: #000080;
+        background-color: #C0C0C0; /* Gris clásico */
+        border: 2px outset #FFFFFF;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+    
+    button:active {
+        border-style: inset;
+    }
+
+  </style>
 </head>
-<body>
 
-  <h1>Contador de Clicks</h1>
-  <h2>Joao Patacho<br>German Pueyo<br>Victor Ruiz<br>Victor Pellicer</h2>
-
-  <h1>Contador de Clicks</h1>
-
-  <button id="btn">Haz clic</button>
-  <p id="contador">0</p>
+<body link="#FF0000" vlink="#800000" alink="#00FF00">
 
   <script>
-    let contador = 0;
-    document.getElementById("btn").addEventListener("click", () => {
-      contador++;
-      document.getElementById("contador").innerText = contador;
+    window.addEventListener("load", () => {
+      new cursoreffects.ghostCursor();
     });
   </script>
 
-  <button id="reset">Reiniciar</button>
-<script>
-  document.getElementById("reset").addEventListener("click", () => {
-    contador = 0;
-    document.getElementById("contador").innerText = contador;
+  <center>
+    <h1>
+      <font face="Comic Sans MS, Courier New, Arial" color="#FF00FF">
+        ¡CONTADOR DE CLICKS VINTAGE!
+      </font>
+    </h1>
 
-  <p id="hora"></p>
-<script>
-  document.getElementById("btn").addEventListener("click", () => {
+    <table width="80%" border="3" cellpadding="10" cellspacing="0">
+      <tr bgcolor="#FFFF99">
+        <td valign="top">
+          
+          <h2><font color="#0000CD">Autores</font></h2>
+          <font face="Verdana" size="+1">
+            Joao Patacho<br>
+            German Pueyo<br>
+            Victor Ruiz<br>
+            Victor Pellicer
+          </font>
+          
+          <hr>
+
+          <center>
+            <h2><font color="#0000CD">¡Haz Clic!</font></h2>
+            
+            <img src="./Images/monki-flip.gif" alt="[TU GIF AQUÍ]" width="100" height="80">
+            <br><br>
+
+            <button id="btn">Haz clic</button>
+            
+            <p><font size="+5" face="Courier New" color="#FF4500">
+                <b><span id="contador">0</span></b>
+            </font></p>
+            
+            <button id="reset">Reiniciar</button>
+            
+            <p id="hora"><font color="#800080">(Esperando clics...)</font></p>
+          </center>
+
+        </td>
+      </tr>
+    </table>
     
-    const ahora = new Date();
-    document.getElementById("hora").innerText = "Último clic: " + ahora.toLocaleTimeString();
+    <hr>
+    
+    <img src="./Images/animated-under-construction-image-0010.gif" alt="[GIF EN CONSTRUCCIÓN]" width="150" height="150">
+    
+    <p>
+      <font color="#FF0000" size="+4"><b>
+        <span class="blink-me">* ESTA ES UNA PÁGINA MUY VINTAGE *</span>
+      </b></font>
+    </p>
 
-  });
-</script>
+  </center>
+
+  <script>
+    let contador = 0;
+    
+    
+    document.getElementById("btn").addEventListener("click", () => {
+     
+      contador++;
+      document.getElementById("contador").innerText = contador;
+      
+     
+      const ahora = new Date();
+      document.getElementById("hora").innerText = "Último clic: " + ahora.toLocaleTimeString();
+    });
+    
+   
+    document.getElementById("reset").addEventListener("click", () => {
+      contador = 0;
+      document.getElementById("contador").innerText = contador;
+      document.getElementById("hora").innerText = "Contador reiniciado";
+    });
+  </script>
+
 </body>
 </html>
