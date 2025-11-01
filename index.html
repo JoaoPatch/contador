@@ -8,6 +8,9 @@
 
   <h1>Contador de Clicks</h1>
   <h2>Joao Patacho<br>German Pueyo<br>Victor Ruiz<br>Victor Pellicer</h2>
+
+  <h1>Contador de Clicks</h1>
+
   <button id="btn">Haz clic</button>
   <p id="contador">0</p>
 
@@ -18,5 +21,21 @@
       document.getElementById("contador").innerText = contador;
     });
   </script>
+
+  <button id="reset">Reiniciar</button>
+<script>
+  document.getElementById("reset").addEventListener("click", () => {
+    contador = 0;
+    document.getElementById("contador").innerText = contador;
+
+  <p id="hora"></p>
+<script>
+  document.getElementById("btn").addEventListener("click", () => {
+    
+    const ahora = new Date();
+    document.getElementById("hora").innerText = "Último clic: " + ahora.toLocaleTimeString();
+
+  });
+</script>
 </body>
 </html>
